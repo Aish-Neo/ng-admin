@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-dashboard',
@@ -9,8 +10,11 @@ export class DashboardComponent {
   card1;
   card2;
   card3;
-
+  isFilterActive: boolean = false;
   rows = [];
+  toppings = new FormControl();
+
+  toppingList = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
   // Shared chart options
   globalChartOptions: any = {
@@ -189,5 +193,8 @@ export class DashboardComponent {
       cb(JSON.parse(req.response));
     };
     req.send();
+  }
+  activeFilter() {
+    this.isFilterActive = !this.isFilterActive;
   }
 }
