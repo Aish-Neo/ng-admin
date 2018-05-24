@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnChanges} from '@angular/core';
 import {FormControl} from "@angular/forms";
 
 @Component({
@@ -6,7 +6,7 @@ import {FormControl} from "@angular/forms";
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnChanges {
   card1;
   card2;
   card3;
@@ -20,22 +20,22 @@ export class DashboardComponent {
   globalChartOptions: any = {
     responsive: true,
     legend: {
-      display: false,
+      display: true,
       position: 'bottom'
     }
   };
 
   // Bar
-  barChartLabels: string[] = ['1', '2', '3', '4', '5', '6', '7'];
+  barChartLabels: string[] = ['Namedsdfsdfsdfsdfssfdsdfsdfsd', '2', '3', '4', '5', '6', '7'];
   barChartType = 'bar';
   barChartLegend = true;
   barChartData: any[] = [{
     data: [6, 5, 8, 8, 5, 5, 4],
-    label: 'Series A',
+    label: 'Pass',
     borderWidth: 0
   }, {
     data: [5, 4, 4, 2, 6, 2, 5],
-    label: 'Series B',
+    label: 'Fail',
     borderWidth: 0
   }];
   barChartOptions: any = Object.assign({
@@ -54,7 +54,10 @@ export class DashboardComponent {
         },
         stacked: true,
         ticks: {
-          beginAtZero: true
+          beginAtZero: true,
+          autoSkip: false,
+          maxRotation: 60,
+          minRotation: 60
         }
       }],
       yAxes: [{
@@ -107,7 +110,7 @@ export class DashboardComponent {
   // combo chart
   comboChartLabels: Array <any> = ['1', '2', '3', '4', '5', '6', '7'];
   chartColors: Array <any> = [{ // grey
-    backgroundColor: '#7986cb',
+    backgroundColor: 'green',
     borderColor: '#3f51b5',
     pointBackgroundColor: '#3f51b5',
     pointBorderColor: '#fff',
@@ -197,4 +200,17 @@ export class DashboardComponent {
   activeFilter() {
     this.isFilterActive = !this.isFilterActive;
   }
+  filterData() {
+    // this.barChartData = [];
+    this.barChartData = [{
+      data: [10, 5, 8, 8, 5, 5, 4],
+      label: 'Series A',
+      borderWidth: 0
+    }];
+  }
+  ngOnChanges(changes) {
+    this.barChartData = [];
+    Promise.resolve(true).then(() => this.filterData());
+  }
+
 }
