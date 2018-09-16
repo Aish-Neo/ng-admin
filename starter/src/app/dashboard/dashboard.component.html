@@ -1,1 +1,18 @@
-Dashboard Works!
+<div class="build-only">
+  <div>
+    <div class="card_scene" *ngFor="let dataofArr of ['Aishvarya', 'Shrivastava', 'Pune', 'DB']; let i = index" (click)="flip(i)">
+      <div class="flipcard" #flipcard>
+        <div class="card__face card__face--front">
+          <picture class="card__image">
+            <img width="180" height="234" id="yui_3_17_2_1_1534724749880_198"
+                 src="https://media.gettyimages.com/photos/world-heritage-listed-rainforest-in-dorrigo-national-park-new-south-picture-{{imgID[i]}}" /> </picture></div>
+        <div class="card__face card__face--back">
+          <p class="cardtext">
+            {{dataofArr}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flipcard-breakfloat"></div>
+</div>

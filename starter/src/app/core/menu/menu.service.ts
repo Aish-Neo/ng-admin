@@ -27,12 +27,12 @@ const MENUITEMS = [
     type: 'link',
     icon: 'explore'
   },
-  {
-    state: 'http://primer.nyasha.me/docs',
-    name: 'DOCS',
-    type: 'extTabLink',
-    icon: 'local_library'
-  }
+  // {
+  //   state: 'http://primer.nyasha.me/docs',
+  //   name: 'DOCS',
+  //   type: 'extTabLink',
+  //   icon: 'local_library'
+  // }
 ];
 
 @Injectable()

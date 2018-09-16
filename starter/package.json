@@ -33,6 +33,7 @@
     "angular-calendar": "0.23.7",
     "angular-tree-component": "7.0.1",
     "chart.js": "2.7.2",
+    "classlist.js": "^1.1.20150312",
     "core-js": "2.5.3",
     "d3": "4.13.0",
     "dragula": "3.7.2",
@@ -48,6 +49,7 @@
     "ngx-quill": "2.2.0",
     "rxjs": "5.5.7",
     "screenfull": "3.3.2",
+    "web-animations-js": "^2.3.1",
     "zone.js": "0.8.20"
   },
   "devDependencies": {
